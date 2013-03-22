@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post">
+	<div class="post-heading">{{blog.subject}}
+	<span class="post-date">{{blog.created.strftime('%A, %d %b %Y - %H:%M%Z')}}</span>
+	</div>
+	<div class="content-content">{{blog.html_content()}}</div>
+	<div class="age">Queried {{time_since_qry}} seconds ago</div>
+</div>
+{% endblock %}

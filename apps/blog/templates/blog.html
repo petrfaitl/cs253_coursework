@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+		<h1 class="post-title">Mrnousek Blog</h1>
+
+{% for entry in blog %}
+<div class="post">
+	<div class="post-heading">{{entry.subject}}
+	<span class="post-date">{{entry.created.strftime('%A, %d %b %Y - %H:%M%Z')}}</span>
+	</div>
+		<div class="content-content">{{entry.html_content()}}</div>
+	<!--<div class="content-content">{{entry.content}}</div> # replaced for line break purposes--> 
+</div>
+{% endfor %}
+<div class="age">Queried {{time_since_qry}} seconds ago</div>
+
+{% endblock %}

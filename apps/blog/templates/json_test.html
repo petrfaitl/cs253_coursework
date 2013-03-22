@@ -1,0 +1,10 @@
+{% block content %}
+{% for record in blog %}
+
+json.dumps("title":blog.subject, "content":blog.content, "created":blog.created.strftime('%A, %d %b %Y - %H:%M%Z'))
+
+
+
+{% endfor %}
+
+{% endblock %}
